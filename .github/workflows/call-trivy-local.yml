@@ -1,8 +1,10 @@
-name: Trivy (call local reusable)
+name: Trivy (org template caller)
 on: [push, pull_request]
 
 jobs:
   trivy:
-    uses: ./.github/workflows/trivy-scan-reusable.yml
+    # Replace <ORG> and <TEMPLATE_REPO> with your organization and template repo name
+    # Example: uses: myorg/org-actions/.github/workflows/trivy-scan-reusable.yml@v1
+    uses: <ORG>/<TEMPLATE_REPO>/.github/workflows/trivy-scan-reusable.yml@v1
     with:
       path: '.'
