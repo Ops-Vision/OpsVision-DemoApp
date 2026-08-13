@@ -1,0 +1,8 @@
+name: Trivy (call local reusable)
+on: [push, pull_request]
+
+jobs:
+  trivy:
+    uses: ./.github/workflows/trivy-scan-reusable.yml
+    with:
+      path: '.'
