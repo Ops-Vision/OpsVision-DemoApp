@@ -5,6 +5,6 @@ jobs:
   trivy:
     # Replace <ORG> and <TEMPLATE_REPO> with your organization and template repo name
     # Example: uses: myorg/org-actions/.github/workflows/trivy-scan-reusable.yml@v1
-    uses: <ORG>/<TEMPLATE_REPO>/.github/workflows/trivy-scan-reusable.yml@v1
+    uses: Ops-Vision/OpsVsion-Infrastructure/.github/workflows/trivy-scan-reusable.yml@v1
     with:
       path: '.'
