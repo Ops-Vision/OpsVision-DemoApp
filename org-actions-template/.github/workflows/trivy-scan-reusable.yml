@@ -21,13 +21,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
 
       - name: Run Trivy filesystem scan
-        uses: aquasecurity/trivy-action@v0.12.0
+        uses: aquasecurity/trivy-action@fbd16365eb88e12433951383f5e99bd901fc618f
         with:
           scan-type: fs
-          path: ${{ inputs.path }}
+          image-ref: ''
+          scan-ref: ${{ inputs.path }}
           format: json
           output: trivy-report.json
           exit-code: '1'
@@ -35,7 +36,7 @@ jobs:
 
       - name: Upload Trivy report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: trivy-report
           path: trivy-report.json
