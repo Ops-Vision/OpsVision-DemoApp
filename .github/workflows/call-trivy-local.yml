@@ -4,6 +4,7 @@ on: [push, pull_request]
 jobs:
   trivy:
     permissions:
+      contents: read
       security-events: write
     # Replace <ORG> and <TEMPLATE_REPO> with your organization and template repo name
     # Example: uses: myorg/org-actions/.github/workflows/trivy-scan-reusable.yml@v1
